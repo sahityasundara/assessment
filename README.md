@@ -43,6 +43,7 @@ https://www.docker.com/products/docker-desktop/
 
 ```bash
 docker-compose up --build
+```
 The API will be available at:
 
 http://localhost:3000
