@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: nest_assessment
+      POSTGRES_USER: nest
+      POSTGRES_PASSWORD: nestpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: "5432"
+      DATABASE_USER: nest
+      DATABASE_PASSWORD: nestpass
+      DATABASE_NAME: nest_assessment
+      JWT_SECRET: supersecret_for_tests
+      JWT_EXPIRES_IN: "3600s"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  db-data:
