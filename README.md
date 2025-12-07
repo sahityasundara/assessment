@@ -46,72 +46,84 @@ docker-compose up --build
 ```
 The API will be available at:
 
+```bash
 http://localhost:3000
-
+```
 🔐 Authentication Endpoints
 Register
+``` bash
 POST /auth/register
-
+```
 
 Body:
-
+```bash
 {
   "email": "test@test.com",
   "password": "password123"
 }
-
+```
 Login
+``` bash
 POST /auth/login
-
+```
 
 Body:
-
+ ```bash
 {
   "email": "test@test.com",
   "password": "password123"
 }
 
-
+```
 Response:
+```bash
 
 {
   "access_token": "..."
 }
 
-
+``` 
 Use the token in requests:
 
 Authorization: Bearer <access_token>
 
 🧩 CRUD Endpoints (Items)
 Get all
+```bash
 GET /items
-
+```
 Get one
+```bash
 GET /items/:id
-
+```
 Create (requires token)
-POST /items
 
+```bash
+POST /items
+```
 
 Body:
 
+```bash
 {
   "name": "Laptop"
 }
-
+```
 Update (requires owner)
+```bash
 PATCH /items/:id
-
+```
 Delete (requires owner)
+```bash
 DELETE /items/:id
-
+```
 🧪 Unit Tests
 
 Run unit tests:
 
+```bash
 npm test
-
+```
 📁 Folder Structure
 src/
  ├─ auth/
