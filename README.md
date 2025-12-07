@@ -124,11 +124,4 @@ Run unit tests:
 ```bash
 npm test
 ```
-📁 Folder Structure
-src/
- ├─ auth/
- ├─ users/
- ├─ items/
- ├─ common/
- ├─ main.ts
- └─ app.module.ts
+
